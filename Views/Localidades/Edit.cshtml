@@ -1,0 +1,31 @@
+@model presonasimagen.Models.LocalidadModel
+
+@{
+    ViewData["Title"] = "Editar Localidad";
+}
+
+<a asp-action="Index" class="nav-link"><i class="fas fa-arrow-left"></i> Volver</a>
+
+<h4>Editar Localidad</h4>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+                <div class="row">
+                    <div class="col-md-8">
+                        <input asp-for="Localidad" class="form-control" />
+                        <span asp-validation-for="Localidad" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="Editar localidad" class="btn btn-warning" />
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

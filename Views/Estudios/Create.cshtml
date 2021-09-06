@@ -1,0 +1,29 @@
+@model presonasimagen.Models.EstudiosModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<a asp-action="Index"><i class="fas fa-arrow-left"></i> Volver</a>
+<br>
+<h4>Crear categoria</h4>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
+                <div class="row">
+                    <div class="col-md-8">
+                        <input asp-for="Estudios" class="form-control" placeholder="Ingrese su categoria">
+                        <span asp-validation-for="Estudios" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="Crear categoria" class="btn btn-primary btn-sm">
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

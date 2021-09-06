@@ -1,0 +1,61 @@
+@model presonasimagen.Models.AlumnosModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<a asp-action="Index"><i class="fas fa-arrow-left"></i> Volver</a>
+<br><br>
+<h4>Detalles</h4>
+<hr />
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Edad)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Edad)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Localidad)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Localidad.Localidad)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Estudios)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Estudios.Estudios)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Titulos)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Titulos.Titulo)
+            </dd>
+        </div>
+        <div class="col-md-6">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImagenName)
+            </dt>
+            <dd class="col-sm-10 text-left">
+                <img src="~/Image/@Html.DisplayFor(model => model.ImagenName)" width="200" height="200">
+            </dd>
+        </div>
+    </div>
+</div>

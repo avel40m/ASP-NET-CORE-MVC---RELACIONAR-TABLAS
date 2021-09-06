@@ -1,0 +1,53 @@
+@model IEnumerable<presonasimagen.Models.AlumnosModel>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h5><i class="fas fa-user-graduate"></i> Listado de alumnos</h5>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenName)
+            </th>
+            <th>
+                <a asp-action="Create" class="btn btn-success text-white btn-sm"><i class="fas fa-user-plus"></i> Crear alumnos</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                <img src="~/Image/@Html.DisplayFor(modelItem => item.ImagenName)" width="50" height="50"/>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt text-warning"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info text-primary"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash text-danger"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
